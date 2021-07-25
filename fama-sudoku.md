@@ -1,7 +1,7 @@
-# Steps to solve the sudoku puzzle in Python
+# Steps to solve the sudoku puzzle 
 
-In this method for solving the sudoku puzzle, \
--> first we assign the size of the 2D matrix to variable M (M*M). \
+In backtracking method for solving the sudoku puzzle, \
+-> first we assign the size of the 2D matrix to variable M (M * M). \
 -> Then we assign the utility function (puzzle) to print the grid. \
 	Later it will assign num to the row and col. \
 -> If we find same num in the same row or same column or in the specific 3*3 matrix, ‘false’ will be returned.\
