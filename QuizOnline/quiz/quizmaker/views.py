@@ -1,6 +1,6 @@
-from random import sample
+#from random import sample
 
-from django.shortcuts import render
+
 import json
 
 from django.core.serializers import serialize
@@ -97,11 +97,10 @@ def create_quiz(request,name):
         else:
             create_U(name)
         quiz_list=[]
-        #["pol","sprt","eco","cul","soc"]
-        for tag in ["cul"]:
-            qs = Q.objects.filter(category=tag).order_by('?').values('id', 'title')[:1]
+        for tag in ["pol","sprt","eco","cul","soc"]:
+            qs = Q.objects.filter(category=tag).order_by('?').values('id', 'question')[:4]
             for q in qs:
-                quiz_list.append(qs.get('id'))
+                quiz_list.append(q.get('id'))
         user = U.objects.filter(name=name).first()
         listQ =quiz_list
         a_obj =Quiz(user=user, listQ=listQ)
@@ -127,3 +126,4 @@ def create_U (name):
     u_obj = U(name=name)
     u_obj.save()
     return JsonResponse({"status": "201"})
+
