@@ -28,3 +28,7 @@ class Question(models.Model):
 
     def __str__(self):
         return self.question
+
+
+class Log(models.Model):
+    pass
